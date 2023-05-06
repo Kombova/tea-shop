@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import Header from '@/components/header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -10,8 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html>
+      <body className={inter.className}>
+        <div className='w-full min-h-screen bg-slate-100 '>
+          <div className=' min-w-[300px] max-w-6xl px-2 min-h-full mx-auto'>
+          <Header/>
+            {children}
+          </div> 
+        </div>
+      </body>
     </html>
   )
 }
