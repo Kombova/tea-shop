@@ -5,7 +5,7 @@ import PhoneNav from "./Phone-nav";
 
 const Nav = () =>{
 
-    if(window.innerWidth >= 800){
+    if(typeof window !== 'undefined' && window.innerWidth >= 800){
         return(
             <nav>
                 <DesktopNav/>
