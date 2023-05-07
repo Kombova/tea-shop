@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect,useState } from "react";
+import { swipeControle } from "@/logic/swipeControle";
 let i = 0;
 const MainSlider = () =>{ 
     let arrImg =['/slider/slider-photo-1.jpg','/slider/slider-photo-2.jpg','/slider/slider-photo-3.jpg'];
@@ -25,7 +26,6 @@ const MainSlider = () =>{
                
               }, 3000);
         }
-        
         return () => clearInterval(intervalId);
      },[stateInterval])
     
@@ -35,25 +35,24 @@ const MainSlider = () =>{
             setStateInterval(true)
         }, 3000);
         let diraction = e.target.value;
-       if(diraction === 'right' && i+1 < arrImg.length){
+       if(diraction === 'right' && i+1 < arrImg.length || swipeControle.swipe==='Left' &&  i+1 < arrImg.length){
             i++
             setImgNow(arrImg[i]);
-       }else if(diraction === 'right' && i+1 === arrImg.length){
+       }else if(diraction === 'right' && i+1 === arrImg.length || swipeControle.swipe==='Left' &&  i+1 === arrImg.length){
             i=0;
             setImgNow(arrImg[i]);
-        }else if(diraction === 'left' && i != 0){
+        }else if(diraction === 'left' && i != 0 || swipeControle.swipe==='Right' && i != 0){
             --i
             setImgNow(arrImg[i]);
-        }else if(diraction === 'left' && i === 0){
+        }else if(diraction === 'left' && i === 0 || swipeControle.swipe==='Right' && i === 0){
             i= arrImg.length - 1;
             setImgNow(arrImg[i]);
         }
         
     }
 
-    
     return(
-        <div className=" w-full h-[500px] max-[800px]:h-[300px] relative overflow-hidden flex">
+        <div className=" w-full h-[500px]  relative overflow-hidden flex rounded-[10px]      max-[800px]:h-[300px] max-[800px]:w-screen max-[800px]:absolute max-[800px]:rounded-none left-0">
             <AnimatePresence   >
                 <motion.div
                     className="w-full h-full absolute"
@@ -64,7 +63,9 @@ const MainSlider = () =>{
                     transition={{
                        
                         opacity: { duration: 0.5 }
-                    }} 
+                    }}
+                    onTouchStart={(e)=>swipeControle.trackStartSwipe(e)} 
+                    onTouchEnd={(e)=>{swipeControle.trackEndSwipe(e);setImg(e)}} 
                 >
                     <Image
                         src={imgNow}
@@ -78,13 +79,16 @@ const MainSlider = () =>{
                 </motion.div>
                
             </AnimatePresence>
+
+
+
                     <label htmlFor="sliderLeft">
                         <Image
                             src={'/arrow-right.svg'}
                             alt='Slider Control'
                             width={50}
                             height={50}
-                            className='object-cover rotate-180 absolute left-0 bottom-[50%] translate-y-[50%] cursor-pointer' 
+                            className='object-cover rotate-180 absolute left-0 bottom-[50%] translate-y-[50%] cursor-pointer max-[500px]:hidden' 
                             priority    
                         />
                     </label>
@@ -94,7 +98,7 @@ const MainSlider = () =>{
                             alt='Slider Control'
                             width={50}
                             height={50}
-                            className='object-cover z-20 absolute right-0 bottom-[50%] translate-y-[50%] cursor-pointer ' 
+                            className='object-cover z-20 absolute right-0 bottom-[50%] translate-y-[50%] cursor-pointer  max-[500px]:hidden' 
                             priority
                            
                             
@@ -102,7 +106,16 @@ const MainSlider = () =>{
                     </label>
                         <button id='sliderLeft' className="hidden" value={'left'} onClick={(e)=>setImg(e)}/>
                         <button id='sliderRight' className=" hidden" value={'right'} onClick={(e)=>setImg(e)}/>
-                    
+                        <Image
+                            src={'/slider/swipe.svg'}
+                            alt='Slider Control'
+                            width={30}
+                            height={30}
+                            className='object-cover z-20 absolute  left-[50%] bottom-1 translate-x-[-50%]  animate-spin opacity-50   min-[500px]:hidden' 
+                            priority
+                           
+                            
+                        />
         </div>
     )
 }
