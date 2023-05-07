@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body className={inter.className}>
-        <div className='w-full min-h-screen bg-slate-100 '>
-          <div className=' min-w-[300px] max-w-6xl px-2 min-h-full mx-auto'>
+        <div className='w-full min-h-screen bg-tea-green '>
+          <div className=' min-w-[300px] max-w-7xl  min-h-screen mx-auto  px-2'>
           <Header/>
             {children}
           </div> 
