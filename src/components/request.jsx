@@ -9,7 +9,7 @@ const Request = ()=>{
     let text = 'sd';
     
     async function getText() {
-        const response = await fetch('https://tea-shop-steel.vercel.app//api/text');
+        const response = await fetch('https://tea-shop-steel.vercel.app/api/text');
         const data = await response.json();
         // console.log(data[0]._id)
         
