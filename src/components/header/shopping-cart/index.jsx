@@ -17,7 +17,7 @@ const ShoppingCart = () => {
                     height={50}
                     alt="Logo"
                 />
-                <span className="absolute bottom-0 right-0 w-[20px] h-[20px] rounded-[100%] text-center py-[3px] text-[12px] font-bold bg-yellow-500">5</span>
+                <span className="absolute bottom-0 right-0 w-[20px]  h-[20px] rounded-[100%] text-center flex justify-center items-center text-[12px] font-bold bg-yellow-500">5</span>
             </button>
 {/*------------------------------------------- Show Cart --------------------------*/}
         <AnimatePresence>
