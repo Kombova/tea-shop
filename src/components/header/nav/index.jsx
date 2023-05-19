@@ -13,8 +13,6 @@ const Nav = () =>{
             setNavScreen(<PhoneNav/>) 
         }
     },[])
-
-
     return(
         <nav>
             {navScreen}

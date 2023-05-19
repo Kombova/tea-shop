@@ -90,7 +90,7 @@ const MainSlider = ({array}) =>{
                             alt='Slider Control'
                             width={50}
                             height={50}
-                            className='object-cover rotate-180 absolute left-0 bottom-[50%] translate-y-[50%] cursor-pointer max-[500px]:hidden' 
+                            className='object-cover rotate-180 absolute left-0 bottom-[50%] translate-y-[50%] cursor-pointer max-[800px]:hidden' 
                             priority    
                         />
                     </label>
@@ -100,7 +100,7 @@ const MainSlider = ({array}) =>{
                             alt='Slider Control'
                             width={50}
                             height={50}
-                            className='object-cover absolute right-0 bottom-[50%] translate-y-[50%] cursor-pointer  max-[500px]:hidden' 
+                            className='object-cover absolute right-0 bottom-[50%] translate-y-[50%] cursor-pointer  max-[800px]:hidden' 
                             priority
 
                         />
@@ -112,7 +112,7 @@ const MainSlider = ({array}) =>{
                             alt='Slider Control'
                             width={30}
                             height={30}
-                            className='object-cover z-20 absolute  left-[50%] bottom-1 translate-x-[-50%]  animate-spin opacity-50   min-[500px]:hidden' 
+                            className='object-cover z-10 absolute  left-[50%] bottom-1 translate-x-[-50%]  animate-spin opacity-50   min-[800px]:hidden' 
                             priority
                            
                             

@@ -11,8 +11,7 @@ const ShoppingCart = () => {
         <div className=" order-3">
 {/*------------------------------------------- button cart --------------------------*/}
             <button className="relative" onClick={()=>setShowCart(!showCart)}>
-                <Image
-                    
+                <Image 
                     src="/shopping-cart.svg"
                     width={50}
                     height={50}
@@ -25,7 +24,7 @@ const ShoppingCart = () => {
             {showCart && 
             <>
                 <motion.div
-                    className="absolute top-0 right-0 w-[90%] z-10 h-full"
+                    className="absolute top-0 right-0 w-[90%] z-20 h-full"
                     initial={{translateX:'100%' }}
                     animate={{translateX:'0%',overflow: 'none'}}
                     exit={{translateX:'100%'}}
@@ -34,7 +33,7 @@ const ShoppingCart = () => {
                     <ViewShoppingCart stateNow={showCart} setState={setShowCart}/>  
                                   
                 </motion.div>
-                <div className="w-full h-full absolute top-0 left-0 z-0 opacity-50 bg-black"/>
+                <div className="w-full h-full absolute top-0 left-0 z-10 opacity-50 bg-black"/>
             </>
               
             }

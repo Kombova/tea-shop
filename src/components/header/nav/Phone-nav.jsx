@@ -9,7 +9,6 @@ const PhoneNav = () =>{
     
     function clickOnButton(){
             setViewNav(!viewNav) 
-            
     }
     return(
         <>
@@ -24,7 +23,7 @@ const PhoneNav = () =>{
                         viewNav &&
                             <>
                                 <motion.ul 
-                                    className={` phone_nav w-[90%] h-full absolute z-10 left-0 top-0 p-[30px] pt-[60px] bg-slate-500 bg-opacity-90 text-[white] text-[25px] flex flex-col gap-[20px]`}
+                                    className={` phone_nav w-[90%] h-full absolute z-20 left-0 top-0 p-[30px] pt-[60px] bg-slate-500  text-[white] text-[25px] flex flex-col gap-[20px]`}
                                     initial={{translateX:'-100%' }}
                                     animate={{translateX:'0%',overflow: 'none'}}
                                     exit={{translateX:'-100%'}}
@@ -43,7 +42,7 @@ const PhoneNav = () =>{
                                     <li className="  hover:scale-105 hover:opacity-[0.8] border-b-2 border-solid pb-2"><Link href={'/about'}>Про нас</Link></li>
                                     <li className="  hover:scale-105 hover:opacity-[0.8] border-b-2 border-solid pb-2">Доставка</li>               
                                 </motion.ul>
-                                <div className='w-full h-full absolute top-0 left-0 z-0 opacity-50 bg-black'/>
+                                <div className='w-full h-full absolute top-0 left-0 z-10 opacity-50 bg-black'/>
                             </>
                         
                     }    
