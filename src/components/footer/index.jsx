@@ -6,7 +6,7 @@ const Footer = () => {
         
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <div className="flex items-center mb-4 lg:mb-0">
-                  <Logo/>
+                  <Logo size={80}/>
               <span className="font-bold text-xl">Company Name</span>
             </div>
             <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:w-1/3">

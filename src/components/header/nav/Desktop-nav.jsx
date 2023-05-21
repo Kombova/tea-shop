@@ -1,11 +1,13 @@
 import Link from "next/link";
-const DesktopNav = () =>{
+
+const DesktopNav = ({children}) =>{
     return(
-        <ul className="flex w-[500px] h-[20px] text-[white] justify-between overflow-hidden">
+        <ul className="flex w-[700px]  items-center  justify-between font-semibold text-[24px]  overflow-hidden">
             <li className="  hover:scale-105 hover:opacity-[0.8] "><Link href={'/'}>Головна</Link></li>
-            <li className="  hover:scale-105 hover:opacity-[0.8] ">Магазин</li>
-            <li className="  hover:scale-105 hover:opacity-[0.8]"><Link href={'/about'}>Про нас</Link></li>
-            <li className="  hover:scale-105 hover:opacity-[0.8] ">Доставка</li>
+            <li className="  hover:scale-105 hover:opacity-[0.8] "><Link href={'/shop'}>Магазин</Link></li>
+            <li className="  hover:scale-105 hover:opacity-[0.8] ">{children}</li>
+            <li className="  hover:scale-105 hover:opacity-[0.8]"><Link href={'/about'}>О нас</Link></li>
+            <li className="  hover:scale-105 hover:opacity-[0.8]  "><Link href={'/delivery'}>Доставка</Link></li>
         </ul>
     )
 }

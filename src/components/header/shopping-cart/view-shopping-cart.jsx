@@ -1,8 +1,11 @@
+
 import Image from "next/image";
+
 const ViewShoppingCart = ({setState,stateNow}) =>{
+    
     return(
         <div className="absolute w-[100%] h-full bg-slate-500">
-            <button className=" cancel_button w-[20px] h-[20px] absolute left-[20px] top-[20px]" onClick={()=>setState(!stateNow)}>
+            <button className=" cancel_button w-[20px] h-[20px] absolute left-[20px] top-[20px]" onClick={()=>setState(false)}>
                 <Image
                     src='/arrow-right.svg'
                     alt="Cancel"

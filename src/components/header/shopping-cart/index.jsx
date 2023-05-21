@@ -1,23 +1,30 @@
 'use client';
 
-import { useState } from "react";
+import { useState} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ViewShoppingCart from "./view-shopping-cart";
+
+
+
+
+
 const { default: Image } = require("next/image");
 
 const ShoppingCart = () => {
-    const[showCart,setShowCart] = useState(false);
+     let[showCart,setShowCart] = useState(false);
+    
+  
     return(
-        <div className=" order-3">
+        <div className=" overflow-visible order-3">
 {/*------------------------------------------- button cart --------------------------*/}
-            <button className="relative" onClick={()=>setShowCart(!showCart)}>
+            <button className="relative overflow-visible" onClick={()=>setShowCart(true)}>
                 <Image 
                     src="/shopping-cart.svg"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     alt="Logo"
                 />
-                <span className="absolute bottom-0 right-0 w-[20px]  h-[20px] rounded-[100%] text-center flex justify-center items-center text-[12px] font-bold bg-yellow-500">5</span>
+                <span className="absolute bottom-[-10px] left-[-10px] w-[30px] h-[30px] rounded-full text-center flex justify-center items-center text-[20px] font-[nonserat] bg-[#0E8388] text-white ">10</span>
             </button>
 {/*------------------------------------------- Show Cart --------------------------*/}
         <AnimatePresence>
@@ -30,7 +37,8 @@ const ShoppingCart = () => {
                     exit={{translateX:'100%'}}
                     transition={{duration:0.5}}
                 >
-                    <ViewShoppingCart stateNow={showCart} setState={setShowCart}/>  
+                    <ViewShoppingCart setState={setShowCart} />  
+                    
                                   
                 </motion.div>
                 <div className="w-full h-full absolute top-0 left-0 z-10 opacity-50 bg-black"/>
@@ -41,4 +49,5 @@ const ShoppingCart = () => {
         </div>
     )
 }
+    
 export default ShoppingCart;

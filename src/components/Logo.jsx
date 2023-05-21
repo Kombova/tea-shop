@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-const Logo = () =>{
+const Logo = ({size}) =>{
     return(
-        <Link href={'/'} className=' max-[800px]:order-3'>
+        <Link href={'/'} className=''>
             <Image
             src="/logo.svg"
-            width={50}
-            height={50}
+            width={size}
+            height={size}
             alt="Logo"
             className=" hover:scale-90"
             />
