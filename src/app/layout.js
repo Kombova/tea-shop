@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
     <html>
       <body className={[montserrat.className]}>
         <div className='w-full min-h-screen '>
-          <div className=' min-w-[300px] max-w-screen-2xl  min-h-full mx-auto min-[800px]:px-2'>
             <Header/>
+          <div className=' min-w-[300px] max-w-screen-2xl  min-h-full mx-auto min-[800px]:px-2'>
               <main>
                 {children}
               </main>

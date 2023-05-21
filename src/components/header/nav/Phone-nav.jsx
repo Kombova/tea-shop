@@ -12,10 +12,10 @@ const PhoneNav = () =>{
     }
     return(
         <>
-            <div className="burger_nav w-[50px] h-[50px] border-[2px] border-[white] border-solid rounded-[10px] flex justify-center items-center py-[10px] flex-wrap min-[800px]:hidden"  onClick={()=>clickOnButton()}>
-                    <span className="w-[80%] h-[2px] block bg-slate-200"></span>
-                    <span className="w-[80%] h-[2px] block bg-slate-200"></span>
-                    <span className="w-[80%] h-[2px] block bg-slate-200"></span>
+            <div className="burger_nav w-[50px] h-[50px] border-solid rounded-[10px] flex justify-center items-center py-[10px] flex-wrap min-[800px]:hidden"  onClick={()=>clickOnButton()}>
+                    <span className="w-[80%] h-[2px] block bg-black"></span>
+                    <span className="w-[80%] h-[2px] block bg-black"></span>
+                    <span className="w-[80%] h-[2px] block bg-black"></span>
                 </div>
                 
                 <AnimatePresence>
